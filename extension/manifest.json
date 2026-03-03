@@ -1,0 +1,43 @@
+{
+    "manifest_version": 3,
+    "name": "Code AI Analyzer",
+    "version": "1.0.0",
+    "description": "Extracts Codeforces problem details, analyzes time complexity, and suggests optimal solutions using AI.",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "storage"
+    ],
+    "host_permissions": [
+        "https://codeforces.com/*",
+        "https://leetcode.com/*",
+        "http://localhost:3000/*"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://codeforces.com/problemset/problem/*",
+                "https://codeforces.com/contest/*/problem/*",
+                "https://codeforces.com/problemset/submit/*",
+                "https://codeforces.com/contest/*/submit"
+            ],
+            "js": [
+                "content.js"
+            ]
+        },
+        {
+            "matches": [
+                "https://leetcode.com/problems/*"
+            ],
+            "js": [
+                "content2.js"
+            ]
+        }
+    ],
+    "background": {
+        "service_worker": "background.js"
+    }
+}
