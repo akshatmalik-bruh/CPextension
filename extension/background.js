@@ -6,7 +6,15 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
             body: JSON.stringify(message.data)
         })
         .then(res => res.json())
-        .then(data => sendResponse({ result: data.result }))
+        .then(data => {
+            if(data.error){
+                  sendResponse({ error: data.error })
+            }
+            else{
+                sendResponse({ result: data.result })
+            } 
+          
+    })
         .catch(err => sendResponse({ error: err.message }));
 
         // Return true to keep the message channel open for async response
