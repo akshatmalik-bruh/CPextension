@@ -1,7 +1,3 @@
-Here’s a **clean, professional, recruiter-level README.md** for your CP (Competitive Programming) Chrome Extension 👇
-
----
-
 # 🚀 CP Analyzer – AI-Powered Codeforces Assistant
 
 A Chrome Extension that analyzes competitive programming problems and user solutions using **GenAI**, providing insights like **time complexity, space complexity, correctness, and optimal solutions**.
